@@ -11,7 +11,6 @@ def ebs_volume_id(volume_arn):
 
 
 def create_encrypted_volume(volume_id, region, az):
-    '''pass the volume_id,region,az to encrpt the volume'''
     snapshot_id = (ec2_client.create_snapshot(
         Description=f'This is {volume_id} volume snapshot.',
         VolumeId=volume_id,
